@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/style.css">
+    <title>Exercise №5 </title>
+
+</head>
+
+<body>
+    <h1>Задача №5</h1>
+    <p> З клавіатури вводиться назва категорії водія (А-мотоцикл, В-легковий автомобіль, С-вантажний автомобіль).
+        Вивести на екран назву транспортного засобу, яким він може керувати.</p>
+
+    <script>
+        const nameOfDriverCategory = prompt('Введіть категорії водія ЛАТИНИЦЕЮ (А, В, С):')
+
+        if (nameOfDriverCategory == "A") {
+            document.write(`
+                    <table>
+                        <tr>
+                            <td>Вітаю Ви можете керувати мотоциклом</td>    
+                        </tr>
+                    </table>                
+                `);
+        } else if (nameOfDriverCategory == "B") {
+            document.write(`
+                    <table>
+                        <tr>
+                            <td>Вітаю Ви можете керувати легковим автомобілем</td>    
+                        </tr>
+                    </table>                
+                `);
+
+        } else if (nameOfDriverCategory == "C") {
+            document.write(`
+                    <table>
+                        <tr>
+                            <td>Вітаю Ви можете керувати вантажним автомобілем</td>    
+                        </tr>
+                    </table>                
+                `);
+        } else {
+            document.write(`
+                    <table>
+                        <tr>
+                            <td>Введіть коректне значення (A, B або C)</td>    
+                        </tr>
+                    </table>                
+                `);
+        }
+
+
+    </script>
+
+</body>
+
+</html>

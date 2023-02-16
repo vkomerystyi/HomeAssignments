@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/style.css">
+    <title>Exercise №4 </title>
+
+</head>
+
+<body>
+    <h1>Задача №4</h1>
+    <p> З клавіатури вводиться вік людини. Вивести на екран ким він є (дитиною у садочку, школярем, студентом,
+        працівником, пенсіонером).</p>
+
+    <script>
+        const humanAge = parseInt(prompt('Введіть ваш повний вік:'))
+
+        if (humanAge >= 1 && humanAge <= 6) {
+            document.write(`
+                    <table>
+                        <tr>
+                            <td>Вітаю Ви дитина у садочку</td>    
+                        </tr>
+                    </table>                
+                `);
+        } else if (humanAge >= 7 && humanAge <= 18) {
+            document.write(`
+                    <table>
+                        <tr>
+                            <td>Вітаю Ви ще школяр</td>    
+                        </tr>
+                    </table>                
+                `);
+        } else if (humanAge >= 19 && humanAge <= 25) {
+            document.write(`
+                    <table>
+                        <tr>
+                            <td>Вітаю у Вас кращі студенькі роки</td>    
+                        </tr>
+                    </table>                
+                `);
+        } else if (humanAge >= 26 && humanAge <= 65) {
+            document.write(`
+                    <table>
+                        <tr>
+                            <td>Вітаю Вас як працівника</td>    
+                        </tr>
+                    </table>                
+                `);
+        } else {
+            document.write(`
+                    <table>
+                        <tr>
+                            <td>Вітаю Ви пенсіонер</td>    
+                        </tr>
+                    </table>                
+                `);
+        }
+
+
+    </script>
+
+</body>
+
+</html>

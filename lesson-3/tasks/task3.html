@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/style.css">
+    <title>Exercise №3 </title>
+
+</head>
+
+<body>
+    <h1>Задача №3</h1>
+    <p> Випадковим чином генерується число від 1 до 5. Спробуйте вгадати число за 2 спроби.</p>
+
+    <script>
+        let firstNumberFrom = 1
+        let secondNumberFrom = 5
+        let generatedNumber = Math.floor(Math.random() * (secondNumberFrom - firstNumberFrom + 1)) + firstNumberFrom
+
+        const userNumberOne = parseInt(prompt('Вгадайте число від 1 до 5'))
+
+        if (generatedNumber == userNumberOne) {
+            document.write(`
+                    <table>
+                        <tr>
+                            <td>Вітаю Ви гадали випадкове число ${userNumberOne}</td>    
+                        </tr>
+                    </table>                
+                `)
+        } else {
+            const userNumberTwo = parseInt(prompt('Ще є одна спроба, число від 1 до 5'))
+            if (generatedNumber == userNumberTwo) {
+                document.write(`
+                    <table>
+                        <tr>
+                            <td>Вітаю Ви гадали випадкове число ${userNumberTwo}</td>    
+                        </tr>
+                    </table>                
+                `)
+            } else {
+                document.write(`
+                    <table>
+                        <tr>
+                            <td>На жаль спроби закінчилсь</td>    
+                        </tr>
+                    </table>                
+                `)
+            }
+        }
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/style.css">
+    <title>Exercise №7 </title>
+
+</head>
+
+<body>
+    <h1>Задача №7</h1>
+    <p> З клавіатури вводиться номер місяця. Вивести до якої пори він відноситься.</p>
+
+    <script>
+        const numberWeekDay = parseInt(prompt('Введіть номер місяця:'))
+        const winterMonth = 'Зима'
+        const springMonth = 'Весна'
+        const summerMonth = 'Літо'
+        const autumnMonth = 'Осінь'
+
+        if (numberWeekDay >= 1 && numberWeekDay <= 2 || numberWeekDay == 12) {
+            document.write(`
+                    <table>
+                        <tr>
+                            <td>${winterMonth}</td>    
+                        </tr>
+                    </table>                
+                `);
+        } else if (numberWeekDay >= 3 && numberWeekDay <= 5) {
+            document.write(`
+                    <table>
+                        <tr>
+                            <td>${springMonth}</td>    
+                        </tr>
+                    </table>                
+                `);
+        } else if (numberWeekDay >= 6 && numberWeekDay <= 8) {
+            document.write(`
+                    <table>
+                        <tr>
+                            <td>${summerMonth}</td>    
+                        </tr>
+                    </table>                
+                `);
+        } else if (numberWeekDay >= 9 && numberWeekDay <= 11) {
+            document.write(`
+                    <table>
+                        <tr>
+                            <td>${autumnMonth}</td>    
+                        </tr>
+                    </table>                
+                `);
+        } else {
+            document.write(`
+                    <table>
+                        <tr>
+                            <td>Введіть коректний номер місяця</td>    
+                        </tr>
+                    </table>                
+                `);
+        }
+
+    </script>
+
+</body>
+
+</html>

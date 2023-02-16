@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/style.css">
+    <title>Exercise №6 </title>
+
+</head>
+
+<body>
+    <h1>Задача №6</h1>
+    <p> З клавіатури вводиться номер дня тижня. Вивести на екран назву дня</p>
+
+    <script>
+        const numberWeekDay = parseInt(prompt('Введіть номер дня тижня:'))
+
+        switch (numberWeekDay) {
+            case 1: document.write(`
+                    <table>
+                        <tr>
+                            <td>Понеділок</td>    
+                        </tr>
+                    </table>                
+                `);
+
+                break;
+            case 2: document.write(`
+                    <table>
+                        <tr>
+                            <td>Вівторок</td>    
+                        </tr>
+                    </table>                
+                `);
+
+                break;
+            case 3: document.write(`
+                    <table>
+                        <tr>
+                            <td>Среда</td>    
+                        </tr>
+                    </table>                
+                `);
+
+                break;
+            case 4: document.write(`
+                    <table>
+                        <tr>
+                            <td>Четверг</td>    
+                        </tr>
+                    </table>                
+                `);
+
+                break;
+            case 5: document.write(`
+                    <table>
+                        <tr>
+                            <td>П\'ятниця</td>    
+                        </tr>
+                    </table>                
+                `);
+
+                break;
+            case 6: document.write(`
+                    <table>
+                        <tr>
+                            <td>Субота</td>    
+                        </tr>
+                    </table>                
+                `);
+
+                break;
+            case 6: document.write(`
+                    <table>
+                        <tr>
+                            <td>Неділя</td>    
+                        </tr>
+                    </table>                
+                `);
+
+                break;
+
+            default: document.write(`
+                    <table>
+                        <tr>
+                            <td>Введіть коректне число від 1 до 7</td>    
+                        </tr>
+                    </table>                
+                `);
+                break;
+        }
+
+
+
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/style.css">
+    <title>Exercise №1 </title>
+
+</head>
+
+<body>
+    <h1>Задача №1 </h1>
+    <p> З клавіатури вводяться імена двох дітей та кількість у них цукерок. Вивести не екран ім’я тієї дитини, у якої
+        кількість цукерок є більшою, або вивести, що кількість однакова.</p>
+
+    <script>
+        const nameOneСhildren = prompt('Ведіть ім\'я першої дитини')
+        const numberOfСandiesOneСhildren = parseInt(prompt('Введіть кількість цукерок у першої дитини'))
+        const nameTwoСhildren = prompt('Ведіть ім\'я другої дитини')
+        const numberOfСandiesTwoСhildren = parseInt(prompt('Введіть кількість цукерок у другої дитини'))
+
+        if (numberOfСandiesOneСhildren > numberOfСandiesTwoСhildren) {
+            document.write(`
+                    <table>
+                        <tr>
+                            <td>${nameOneСhildren} - більше цукерок</td>    
+                        </tr>
+                    </table>                
+                `)
+        } else if (numberOfСandiesOneСhildren < numberOfСandiesTwoСhildren) {
+            document.write(`
+                    <table>
+                        <tr>
+                            <td>${nameTwoСhildren} - більше цукерок</td>    
+                        </tr>
+                    </table>  
+                `)
+        } else {
+            document.write(`
+                    <table>
+                        <tr>
+                            <td>Цукерок по рівну</td>    
+                        </tr>
+                    </table> 
+                `)
+        }
+    </script>
+
+</body>
+
+</html>
