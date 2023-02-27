@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="../css/style.css" />
+        <title>Document</title>
+    </head>
+    <body>
+        <h1>Задача 14</h1>
+        <p>
+            Користувачу повідомляють суму, яку йому треба сплатити. Користувач
+            поступово вводить суму грошей до тих пір, поки суми не буде
+            достатньо для оплати товарів (кожного разу користувачу повідомляють,
+            яку ще суму потрібно ввести).
+        </p>
+        <script>
+            const haveToPay = 5781
+            alert(`Вам потрібно сплатити ${haveToPay} грн`)
+
+            let totalSum = 0
+            let restOfMoney = 0
+            while (haveToPay > totalSum) {
+                let amountOfMoney = parseInt(
+                    prompt(`Введіть потрібну суму грошей:`)
+                )
+                totalSum += amountOfMoney
+
+                if (haveToPay > totalSum) {
+                    alert(
+                        `Потрібно ввести ще стільки коштів: ${
+                            haveToPay - totalSum
+                        }`
+                    )
+                } else {
+                    restOfMoney = totalSum - haveToPay
+                }
+            }
+            document.write(
+                `Cyма до сплати ${haveToPay} </br> Дякую ви внесли: ${totalSum} </br> Ваша решта ${restOfMoney}`
+            )
+        </script>
+    </body>
+</html>

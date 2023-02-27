@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="../css/style.css" />
+        <title>Document</title>
+    </head>
+    <body>
+        <h1>Задача 13</h1>
+        <p>
+            Морський бій. Комп’ютер випадково розташовує одиночний корабель на
+            полі розміром N*M. Маючи К снарядів користувач намагається потопити
+            корабель.
+        </p>
+        <script>
+            const startGame = alert(
+                `Комп’ютер випадково розташував\n одиночний корабель  на полі 10 на 10`
+            )
+            const countShells = parseInt(
+                prompt(`Введіть кількість пострілів від 1 до 4`)
+            )
+            const countRowMin = 1
+            const countRowMax = 10
+            const countColumnMin = 1
+            const countColumnMax = 10
+            let randomShipRow =
+                Math.floor(Math.random() * (countRowMax - countColumnMin)) +
+                countRowMin
+            let randomShipColumn =
+                Math.floor(Math.random() * (countColumnMax - countColumnMin)) +
+                countColumnMin
+
+            for (i = 1; i <= countShells; i++) {
+                let coordinateRow = parseInt(
+                    prompt(`Введіть кординату ${i} пострілу по X:`)
+                )
+                let coordinateColumn = parseInt(
+                    prompt(`Введіть кординату ${i} пострілу по Y:`)
+                )
+                if (coordinateRow === randomShipRow && coordinateColumn === randomShipColumn) {
+                    document.write(`Ви перемогли кординати. Корабель знаходився на ${randomShipRow} і ${randomShipColumn}`)
+                        break
+                    } 
+                }
+                document.write(`Ви програли. Корабель знаходився на ${randomShipRow} і ${randomShipColumn}`)
+
+
+            
+        </script>
+    </body>
+</html>

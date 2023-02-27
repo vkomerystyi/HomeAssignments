@@ -1,0 +1,18 @@
+label {
+    display: inline-block;
+    margin: 2px 2px 2px 50px;
+}
+table{
+    border-collapse: collapse;
+    border: 5px solid rgb(200,200,200);
+    display: inline-block;
+    margin-right: 60px;
+}
+td{
+    border: 2px solid rgb(190, 190, 190);
+    padding: 10px 10px;
+}
+img{
+    padding: 10px;
+    max-width: 256px;
+}

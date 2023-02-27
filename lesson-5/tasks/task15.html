@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="../css/style.css" />
+        <title>Document</title>
+    </head>
+    <body>
+        <h1>Задача 15</h1>
+        <p>
+            Користувача поступово вводить показники температури протягом року.
+            Знайти середню температуру.
+        </p>
+        <script>
+            let countTemperature = 0
+            let sumCountTemperature = 0
+
+            while (countTemperature < 365) {
+                let temperatureIndicatorsYear = parseFloat(
+                    prompt(`Ввести показник температури:`)
+                )
+                if (isFinite(temperatureIndicatorsYear)) {
+                    sumCountTemperature += temperatureIndicatorsYear
+                    countTemperature++
+                } else {
+                    break
+                }
+                
+            }
+            let averageTemperature = sumCountTemperature / countTemperature
+            document.write(`Cередня температура: ${averageTemperature.toFixed(2)} C`)
+        </script>
+    </body>
+</html>

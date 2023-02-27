@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="../css/style.css" />
+        <title>Document</title>
+    </head>
+    <body>
+        <h1>Задача 12</h1>
+        <p>
+            Ігровий автомат. Випадково вибираємо зображення у 3 позиціях. Вибір
+            у кожній позиції вибирається як одне з чотирьох зображень. Вивести
+            ці зображення і повідомити виграш користувача (три перших зображення
+            100 грн, три других – 200, три третіх – 500, три четвертих
+            зображення – 1000грн). Використати цикли і switch (для вибору
+            зображення за номером)
+        </p>
+        <script>
+            let startGame = confirm(`Нажміть "Ок" для початку гри`)
+
+            let boneOne = 0
+            let bonetwo = 0
+            let bonethree = 0
+            let bonefour = 0
+
+            const imgCountRow = 3
+
+            if (startGame) {
+                for (i = 1; i <= imgCountRow; i++) {
+                    let raudomImg = 1 + Math.floor(Math.random() * 4)
+
+                    switch (raudomImg) {
+                        case 1:
+                            boneOne++
+                            break
+                        case 2:
+                            bonetwo++
+                            break
+                        case 3:
+                            bonethree++
+                            break
+                        case 4:
+                            bonefour++
+                            break
+                    }
+                    document.write(
+                        `<img src="../img/game/${raudomImg}.png" alt="bone"</br>`
+                    )
+                }
+                if (boneOne === 3) document.write(`<div>Ви виграли 100 грн</div>`)
+                else if (bonetwo === 3) document.write(`<div>Ви виграли 200 грн</div>`)
+                else if (bonethree === 3) document.write(`<div>Ви виграли 500 грн</div>`)
+                else if (bonefour === 3) document.write(`<div>Ви виграли 1000 грн</div>`)
+                else {
+                    document.write(`<div>Спробуйте ще...</div>`)
+                }
+            }
+        </script>
+    </body>
+</html>

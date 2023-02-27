@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <body>
+        <h1>Задача 1</h1>
+        <p>
+            Вивести з використанням циклів маркований список з випадковими
+            числами (1-100). Кількість випадкових чисел вводиться користувачем.
+        </p>
+
+        <script>
+            let ul = document.createElement("ul")
+            document.body.append(ul)
+            countRandomNum = parseInt(prompt("Введіть кількіть чисел: "))
+
+            let minNumer = 1
+            let maxNumber = 100
+            count = 0
+            while (count < countRandomNum) {
+                let randomNumber =
+                    Math.floor(Math.random() * (maxNumber - minNumer + 1)) + minNumer
+
+                let li = document.createElement("li")
+                li.textContent = randomNumber
+                ul.append(li)
+                count++
+            }
+        </script>
+    </body>
+</html>
