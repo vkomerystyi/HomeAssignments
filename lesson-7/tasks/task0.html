@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+
+    <body>
+        <h1>Задача №0</h1>
+        <p>
+            Створити функцію, яка за номером місяця повертає пору року, до якої
+            відноситься цей місяць.
+        </p>
+
+        <script>
+            function getSeasonYear(numberMonth) {
+                let result
+                if (
+                    (numberMonth >= 1 && numberMonth < 3) ||
+                    numberMonth === 12
+                ) {
+                    result = "Winter"
+                } else if (numberMonth < 6) {
+                    result = "Spring"
+                } else if (numberMonth < 9) {
+                    result = "Summer"
+                } else if (numberMonth < 12) {
+                    result = "Autumn"
+                } else {
+                    result = " не існує.."
+                }
+                return result
+            }
+
+            const numberMonth = parseInt(
+                prompt(`Введіть номер місяця від 1 до 12`)
+            )
+            let season = getSeasonYear(numberMonth)
+            document.write(`Ви ввели ${numberMonth} - ця пора року ${season}`)
+        </script>
+    </body>
+</html>

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+
+    <body>
+        <h1>Задача №3</h1>
+        <p>Створити окремі функції, які для 4 чисел знаходять:</p>
+        <ul>
+            <li>суму</li>
+            <li>добуток</li>
+            <li>середнє арифметичне</li>
+            <li>мінімальне значення</li>
+        </ul>
+
+        <script>
+            function getSumOfNumber() {
+                /* return a + b + c + d */
+                let sum = 0
+                for (let i = 0; i < arguments.length; i++) {
+                    sum += arguments[i]
+                }
+                return sum
+            }
+            function getProductOfNumbers(a, b, c, d) {
+                return a * b * c * d
+            }
+            function getArithmeticMean(a, b, c, d) {
+                return (a + b + c + d) / 4
+            }
+            function getMinimumValue(a, b, c, d) {
+                /* let minValueDefault = Math.min(a, b, c, d) */
+                let minValueDefault = a
+                if (b < minValueDefault) minValueDefault = b
+                if (c < minValueDefault) minValueDefault = c
+                if (d < minValueDefault) minValueDefault = d
+                return minValueDefault
+            }
+
+            let numberOne = parseFloat(prompt("Введіть перше число: "))
+            let numberTwo = parseFloat(prompt("Введіть друге число: "))
+            let numberThree = parseFloat(prompt("Введіть третє число: "))
+            let numberFour = parseFloat(prompt("Введіть четверте число: "))
+
+            const oneFunc = getSumOfNumber(
+                numberOne,
+                numberTwo,
+                numberThree,
+                numberFour
+            )
+            const twoFunc = getProductOfNumbers(
+                numberOne,
+                numberTwo,
+                numberThree,
+                numberFour
+            )
+            const threeFunc = getArithmeticMean(
+                numberOne,
+                numberTwo,
+                numberThree,
+                numberFour
+            )
+            const fourFunc = getMinimumValue(
+                numberOne,
+                numberTwo,
+                numberThree,
+                numberFour
+            )
+
+            document.write(`Сума чисел: ${oneFunc} </br>`)
+            document.write(`Добуток чисел: ${twoFunc} </br>`)
+            document.write(`Cереднє арифметичне чисел: ${threeFunc} </br>`)
+            document.write(`Мінімальне значення чисел: ${fourFunc} </br>`)
+        </script>
+    </body>
+</html>
