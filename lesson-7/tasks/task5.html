@@ -17,9 +17,43 @@
         </ul>
 
         <script>
-            let numberOne = parseFloat(prompt("Введіть перше число: "))
-            let numberTwo = parseFloat(prompt("Введіть друге число: "))
-            let numberThree = parseFloat(prompt("Введіть третє число: "))
+            function getTranslatedInches(number) {
+                let resultInches = number / 2.54
+                return resultInches
+            }
+            function getTranslatedPound(number) {
+                let resultPound = number * 2.20462
+                return resultPound
+            }
+            function getTranslatedMiles(number) {
+                let resultMiles = number * 0.62137
+                return resultMiles
+            }
+
+            let numberСentimeter = parseFloat(
+                prompt("Введіть число в сантиметрах і дізнаєтесь в дюймах: ")
+            )
+            let numberKilograms = parseFloat(
+                prompt("Введіть число в кілограмах і дізнаєтесь в фунтах: ")
+            )
+            let numberKilometers = parseFloat(
+                prompt("Введіть число в кілометрах і дізнаєтесь в милі: ")
+            )
+
+            const inches = getTranslatedInches(numberСentimeter)
+            document.write(
+                ` В ${numberСentimeter} см - ${inches.toFixed(4)} дюйма </br>`
+            )
+
+            const kilogram = getTranslatedPound(numberKilograms)
+            document.write(
+                ` В ${numberKilograms} кг - ${kilogram.toFixed(4)} фунта </br>`
+            )
+
+            const miles = getTranslatedMiles(numberKilometers)
+            document.write(
+                ` В ${numberKilometers} кг - ${miles.toFixed(4)} милі`
+            )
         </script>
     </body>
 </html>
