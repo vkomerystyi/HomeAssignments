@@ -17,14 +17,20 @@
         </p>
 
         <script>
-            //функція має (зображженя , заголовок, посиланнякуди переходимо при кліку на зображення)
-
             function showBanner(img, title, src) {
-                let banner = `<h2>${title}<h2>
-                    <div><a src="${src}" target>${img}</a></div>`
+                let banner = `<h2>${title}</h2>
+                    <div>
+                        <a href="${src}" target="_blank" ><img src="${img}" alt="img"></a>
+                    </div>`
 
                 return banner
             }
+            const img = "../img/5.png"
+            const title = "Google"
+            const src = "https://www.google.com/"
+
+            let resultBanner = showBanner(img, title, src)
+            document.write(resultBanner)
         </script>
     </body>
 </html>

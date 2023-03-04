@@ -11,16 +11,35 @@
         <h1>Задача №7</h1>
         <p>
             Створити функцію, яка випадковим чином виводить на екран одне із 4
-            зображень (шляхи до зображень передаються у функцію
+            зображень (шляхи до зображень передаються у функцію)
         </p>
 
         <script>
-            function showRandomImg() {
+            function showRandomImg(img1, img2, img3, img4) {
                 let numberRandomImg = 1 + Math.floor(Math.random() * 4)
-
-                return ` <img src="../img/${numberRandomImg}.png" alt="">`
+                let resultImg
+                switch (numberRandomImg) {
+                    case 1:
+                        resultImg = `<img src="${img1}${numberRandomImg}.png" alt="img">`
+                        break
+                    case 2:
+                        resultImg = `<img src="${img2}${numberRandomImg}.png" alt="img">`
+                        break
+                    case 3:
+                        resultImg = `<img src="${img3}${numberRandomImg}.png" alt="img">`
+                        break
+                    case 4:
+                        resultImg = `<img src="${img4}${numberRandomImg}.png" alt="img">`
+                        break
+                }
+                return resultImg
             }
-            let img = showRandomImg()
+            const imgOne = "../img/"
+            const imgTwo = "../img/"
+            const imgThree = "../img/"
+            const imgFour = "../img/"
+
+            let img = showRandomImg(imgOne, imgTwo, imgThree, imgFour)
             document.write(img)
         </script>
     </body>
