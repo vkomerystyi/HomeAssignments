@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Задача 1</title>
+    </head>
+
+    <body>
+        <h1>Задача №1</h1>
+        <p>
+            Дано масив, який містить оцінки з К предметів. Знайти середній бал і
+            з’ясувати до якої категорії він відноситься (відмінник, двійочник
+            (має хоча би одну двійку), хорошист (оцінки добре і відмінно),
+            трійочник(є хоча би одна трійка)).
+        </p>
+
+        <script>
+            //  кількіть оцінок в масиві
+            const countAssessments = parseInt(
+                prompt("Введіть кількіть предметів для підрахунку: ")
+            )
+            //  сгенерував випадковий масив оцінок учнів від 1 до 5
+            function getCountPoint(arr) {
+                let arrValue = []
+                for (let i = 0; i < arr; i++) {
+                    let random = 1 + Math.floor(Math.random() * 5)
+                    arrValue.push(random)
+                }
+                return arrValue
+            }
+            //  знаходими середній бал із масива
+            function getFindAverage(arr) {
+                let sumPoint = 0
+                let count = 0
+                for (let i = 0; i < arr.length; i++) {
+                    sumPoint += arr[i]
+                    count++
+                }
+                return sumPoint / count
+            }
+            //  зхаходмімо мімімальну оцінку учня для категоріі успішності
+            function getMinValue(arr) {
+                let minValue = arr[0]
+                for (let i = 0; i < arr.length; i++) {
+                    if (minValue > arr[i]) minValue = arr[i]
+                }
+                return minValue
+            }
+            //  знаходимо категорію успішностії
+            function categoryPoint(value) {
+                switch (value) {
+                    case 1:
+                    case 2:
+                        return "двійошник"
+                    case 3:
+                    case 4:
+                        return "хорошист"
+                    case 5:
+                        return "відмінник"
+                }
+            }
+            //  записуємо значення функції
+            let arrPoint = getCountPoint(countAssessments)
+            const average = getFindAverage(arrPoint)
+            const minValue = getMinValue(arrPoint)
+            const category = categoryPoint(minValue)
+            //  виводемо значення
+            document.write(
+                `Ваш середній бал ${average.toFixed(2)}  
+                Успішніть відповідає категорії: ${category}`
+            )
+        </script>
+    </body>
+</html>

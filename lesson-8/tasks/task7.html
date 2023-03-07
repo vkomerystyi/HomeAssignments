@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Задача 7</title>
+    </head>
+
+    <body>
+        <h1>Задача №7</h1>
+        <p>
+            Дано послідовність платіжок протягом року. Знайти сумарну кількість
+            грошей за:
+        </p>
+        <ul>
+            <li>за весь рік;</li>
+            <li>у першій половині року;</li>
+            <li>у другій половині року;</li>
+            <li>за літо;</li>
+            <li>за парні місяці (з парними номерами);</li>
+            <li>
+                за місяці, які є початковими у сезоні (весна, літо, осінь,
+                зима).
+            </li>
+        </ul>
+        <script>
+            //кількіть місяців для перевірки
+            let countMonch = 12
+            //функція формування масиву оплат за вказанні місяці
+            function totalPriceArray(monch) {
+                let arr = []
+                for (let i = 0; i < monch; i++) {
+                    let userPayment = parseFloat(
+                        prompt(`Введіть суму грошей за ${i + 1} місяць`)
+                    )
+                    arr.push(userPayment)
+                }
+                return arr
+            }
+            //обчислюємо значення функції
+            let arrTotalPay = totalPriceArray(countMonch)
+            //функція знаходить суму грошей за вказаними місяцями
+            function getSumPrice(arrPayment, startMonch, endMonch) {
+                let sum = 0
+                for (let i = startMonch; i <= endMonch; i++) {
+                    sum += arrPayment[i - 1]
+                }
+                return sum
+            }
+            //за весь рік
+            let sumYear = getSumPrice(arrTotalPay, 1, 12)
+            document.write(`Сума грошей за рік: ${sumYear} </br>`)
+            //за першу половину року
+            let sumFistHalfYear = getSumPrice(arrTotalPay, 1, 6)
+            document.write(
+                `Сума за першу половину року: ${sumFistHalfYear}</br>`
+            )
+            //за першу половину року
+            let sumSecondHalfYear = getSumPrice(arrTotalPay, 7, 12)
+            document.write(
+                `Сума за другу половину року: ${sumSecondHalfYear}</br>`
+            )
+            //за першу половину року
+            let sumSummerYear = getSumPrice(arrTotalPay, 6, 8)
+            document.write(`Сума за літо: ${sumSummerYear}</br>`)
+        </script>
+    </body>
+</html>

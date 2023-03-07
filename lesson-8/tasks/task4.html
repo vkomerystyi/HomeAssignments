@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Задача 4</title>
+    </head>
+
+    <body>
+        <h1>Задача №4</h1>
+        <p>
+            Дано послідовність номерів автомобілів. Підрахувати кількість
+            номерів, які:
+        </p>
+        <ul>
+            <li>починаються на букву «А»;</li>
+            <li>перша і остання літери співпадають;</li>
+            <li>складаються з більше ніш 5 символів;</li>
+        </ul>
+        <script>
+            let carNumbers = [
+                "AA1111BB",
+                "BC2323CA",
+                "DD9876FF",
+                "FG78",
+                "GH8765DS",
+                "RF5421WQ",
+                "AZ7777AZ",
+                "ZX9",
+                "UI3821HQ",
+                "AX9921AA",
+                "QW4567ZX",
+                "PV7890FG",
+                "KL432",
+                "NM9865YU",
+                "LK2468TF",
+                "AT0867JA",
+            ]
+            //функція пошуку першої літери в масиві імен
+            function getSearchLetter(arr) {
+                let count = 0
+                for (let i = 0; i < arr.length; i++) {
+                    if (arr[i][0] == "A") count++
+                }
+                return count
+            }
+            //функція пошуку співпадіння першої та останньої літери
+            function getSearchCommonLetter(arr) {
+                let count = 0
+                for (let i = 0; i < arr.length; i++) {
+                    if (arr[i][0] == arr[i][arr[i].length - 1]) count++
+                }
+                return count
+            }
+            //функція пошуку кількості символів які більше ніш 5;
+            function getSearchFiveletter(arr) {
+                let count = 0
+                for (let i = 0; i < arr.length; i++) {
+                    if (arr[i].length > 5) count++
+                }
+                return count
+            }
+            //виводимо кількіть номерів, які починаюсться на літеру А
+            const countletterA = getSearchLetter(carNumbers)
+            document.write(
+                `Кількіть номерів які починаються на літеру А: ${countletterA} </br>`
+            )
+            //виводимо кількість номерів, в яких перша і остання літери співпадають
+            const commonLetter = getSearchCommonLetter(carNumbers)
+            document.write(
+                `Kількість номерів, в яких перша і остання літери співпадають: ${commonLetter} </br>`
+            )
+            //виводимо кількість номерів довжина яких больше 5
+            const countAvtoNum = getSearchFiveletter(carNumbers)
+            document.write(
+                `Кількість номерів довжина яких больше 5 складає: ${countAvtoNum}`
+            )
+        </script>
+    </body>
+</html>

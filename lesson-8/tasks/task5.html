@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Задача 5</title>
+    </head>
+
+    <body>
+        <h1>Задача №5</h1>
+        <p>Дано послідовність оцінок учня. Підрахувати кількість:</p>
+        <ul>
+            <li>двійок</li>
+            <li>кількість хороших оцінок (добре, відмінно);</li>
+            <li>кількість оцінок, які нижче середнього.</li>
+        </ul>
+        <script>
+            //кількість оцінок для формвання масиву
+            const countGrade = parseInt(
+                prompt("Введіть скільки оцінок будемо перевіряти: ")
+            )
+            //функція створення масиву оцінок
+            function getGrade(number) {
+                let arr = []
+                for (let i = 0; i < number; i++) {
+                    let question = parseInt(
+                        prompt(`Введіть ${i + 1} оцінку від 1 до 5: `)
+                    )
+                    arr.push(question)
+                }
+                return arr
+            }
+            //масив оцінок
+            const arrGrade = getGrade(countGrade)
+            //функція пошуку двіойк в масиві
+            function getSearchBedGrade(arr) {
+                let count = 0
+                for (let i = 0; i < arr.length; i++) {
+                    if (arr[i] == 2) count++
+                }
+                return count
+            }
+            //функція пошуку хороших оцінок (добре, відмінно);
+            function getSearchGoodGrade(arr) {
+                let count = 0
+                for (let i = 0; i < arr.length; i++) {
+                    if (arr[i] >= 3 && arr[i] <= 5) {
+                        count++
+                    }
+                }
+                return count
+            }
+            //функція пошуку середнього значення оцінок
+            function getAverageValue(arr) {
+                let sum = 0
+                let count = 0
+                for (let i = 0; i < arr.length; i++) {
+                    sum += arr[i]
+                    count++
+                }
+                return sum / count
+            }
+            console.log(getAverageValue(arrGrade))
+            //функція пошуку кількісті оцінок, які нижче середнього
+            function getLessAvg(arr) {
+                let count = 0
+                for (let i = 0; i < arr.length; i++) {
+                    if (arr[i] < getAverageValue(arr)) count++
+                }
+                return count
+            }
+
+            //Виводимо кількість двійок
+            let countBedGrade = getSearchBedGrade(arrGrade)
+            document.write(`Кількість двійок у учня: ${countBedGrade} </br>`)
+            //виводимо кількість хороших оцінок (добре, відмінно)
+            let constGoodGrade = getSearchGoodGrade(arrGrade)
+            document.write(
+                `Кількість хороших оцінок (добре, відмінно): ${constGoodGrade}</br>`
+            )
+            //виводимо кількість оцінок, які нижче середнього
+            let lessAvg = getLessAvg(arrGrade)
+            document.write(`Кількість оцінок, які нижче середнього: ${lessAvg}`)
+        </script>
+    </body>
+</html>

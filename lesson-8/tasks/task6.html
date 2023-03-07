@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Задача 6</title>
+    </head>
+
+    <body>
+        <h1>Задача №6</h1>
+        <p>
+            Дано послідовність цін товарів та назв (у окремих масивах). Вивести
+            на екран ті, які може собі дозволити користувач (кількість грошей
+            задається).
+        </p>
+        <ul>
+            <li>let productsPrices = [1000, 20, 31]</li>
+            <li>let productsTitles = [‘cheese’, ‘juice’, ‘bread’]</li>
+        </ul>
+        <script>
+            //масиви цін і товарів
+            let productsPrices = [
+                1290, 390, 990, 590, 490, 1490, 890, 790, 290, 1990,
+            ]
+            let productsTitles = [
+                "Футболка",
+                "Шорты",
+                "Кроссовки",
+                "Джинсы",
+                "Рубашка",
+                "Куртка",
+                "Спортивный костюм",
+                "Платье",
+                "Сумка",
+                "Часы",
+            ]
+            //кількість грошей користувача
+            const countMoneyUser = parseInt(
+                prompt("Введіть кількість грошей, більшу за 300: ")
+            )
+            //функція записує на які товари хватить грощей в новий масив
+            function getPrices(price, userMoney) {
+                let userPices = []
+                for (let i = 0; i < price.length; i++) {
+                    if (price[i] < userMoney) {
+                        userPices.push(i)
+                    }
+                }
+                return userPices
+            }
+            //фунція виводить новий масив після порівняння товарів і масива грошей на вистачить коштів
+            function getProductUser(userMoney, title) {
+                let product = []
+                for (let i = 0; i < userMoney.length; i++) {
+                    for (let j = 0; j < title.length; j++) {
+                        if (userMoney[i] == j) {
+                            product.push(title[i])
+                        }
+                    }
+                }
+                return product
+            }
+            //записуємо значення першої функції
+            let moneyProduct = getPrices(productsPrices, countMoneyUser)
+            //виводимо товари на які хватить коштів
+
+            let enoughProduct = getProductUser(moneyProduct, productsTitles)
+            document.write(
+                `Товари на які у вас хватає коштів: ${enoughProduct.join(", ")}`
+            )
+        </script>
+    </body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Задача 3</title>
+    </head>
+
+    <body>
+        <h1>Задача №3</h1>
+        <p>
+            Дано масив імен учнів. З’ясувати скільки разів зустрічається ім’я
+            «Іван».
+        </p>
+
+        <script>
+            //Дано масив імен учнів
+            let names = [
+                "Іван",
+                "Марія",
+                "Петро",
+                "Оксана",
+                "Іван",
+                "Наталія",
+                "Олександр",
+                "Юлія",
+                "Володимир",
+                "Катерина",
+                "Василь",
+                "Іван",
+                "Олена",
+                "Олег",
+                "Іван",
+                "Віктор",
+            ]
+            //функція знаходить кількіть повторень пошуковго ім'я
+            function countRepeatName(names) {
+                let count = 0
+                for (let i = 0; i < names.length; i++) {
+                    if (names[i] === "Іван") {
+                        count++
+                    }
+                }
+                return count
+            }
+            //Виводимо кількіть повторень покушового ім'я
+            const resultSearch = countRepeatName(names)
+            document.write(
+                `Кількість учнів з ім'я Іван дорівнює ${resultSearch}`
+            )
+        </script>
+    </body>
+</html>
