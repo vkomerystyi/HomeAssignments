@@ -48,6 +48,33 @@
                 }
                 return sum
             }
+            //функція пошуку парного числа
+            function getEvenNumber(num) {
+                return num % 2 === 0
+            }
+            //функція знаходить суммму за парні місяці (з парними номерами);
+            function getEvenMonchSum(arr) {
+                let sum = 0
+                for (let i = 0; i < arr.length; i++) {
+                    if (getEvenNumber(i + 1)) {
+                        sum += arr[i]
+                    }
+                }
+                return sum
+            }
+            //функція знаходить суму за місяці, які є початковими у сезоні (весна, літо, осінь, зима).
+            function getStartSeasonSum(arr) {
+                let sum = 0
+                for (let i = 0; i < arr.length; i++) {
+                    if (i % 3 === 2) {
+                        sum += arr[i]
+                    }
+                }
+                return sum
+            }
+
+            /* =================================================== */
+
             //за весь рік
             let sumYear = getSumPrice(arrTotalPay, 1, 12)
             document.write(`Сума грошей за рік: ${sumYear} </br>`)
@@ -56,14 +83,22 @@
             document.write(
                 `Сума за першу половину року: ${sumFistHalfYear}</br>`
             )
-            //за першу половину року
+            //за другу половину року
             let sumSecondHalfYear = getSumPrice(arrTotalPay, 7, 12)
             document.write(
                 `Сума за другу половину року: ${sumSecondHalfYear}</br>`
             )
-            //за першу половину року
+            //за літо
             let sumSummerYear = getSumPrice(arrTotalPay, 6, 8)
             document.write(`Сума за літо: ${sumSummerYear}</br>`)
+            //за парні місяці (з парними номерами)
+            let sumEvenYear = getEvenMonchSum(arrTotalPay)
+            document.write(`Сума за парні місяці: ${sumEvenYear} </br>`)
+            //
+            let startSeasonSum = getStartSeasonSum(arrTotalPay)
+            document.write(
+                `початковими у сезоні (весна, літо, осінь, зима): ${startSeasonSum}`
+            )
         </script>
     </body>
 </html>

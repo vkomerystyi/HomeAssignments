@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Задача 8</title>
+    </head>
+
+    <body>
+        <h1>Задача №8</h1>
+        <p>
+            Дано одновимірний масив, у якому зберігається певна виграшна сума
+            (елементи заповнюються випадковим чином значеннями від -500 до 500).
+            Надаючи користувачу можливість вибирати номери елементів (поки він
+            не відмовиться). Знаходити сумарний виграш.
+        </p>
+
+        <script>
+            //функція рандомного числа від -500 до 500
+            function getRandomNum() {
+                const min = -500
+                const max = 500
+                let random = min + Math.floor(Math.random() * (max - min + 1))
+                return random
+            }
+            //функція створення масива заповнюючогося випадковим чином від -500 до 500
+            function getRandomArr() {
+                let arr = []
+                for (let i = 0; i < 10; i++) {
+                    arr.push(getRandomNum())
+                }
+                return arr
+            }
+            //запитуємо у користувача номер елемента
+            function questionUser() {
+                let totalWin = 0
+                let userNum
+                do {
+                    userNum = parseInt(prompt("Введіть номер елемента до 10"))
+                    if (userNum >= 0 && userNum < 10) {
+                        totalWin += getRandomArr()[userNum]
+                    }
+                } while (!isNaN(userNum))
+                return totalWin
+            }
+            let question = questionUser()
+            document.write(`Ваш виграш ${question}`)
+        </script>
+    </body>
+</html>
