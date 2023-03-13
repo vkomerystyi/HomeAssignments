@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>JavaScript</title>
+    </head>
+
+    <body>
+        <h1>Задача №6</h1>
+        <p>
+            Дано масив елементів. Усі елементи, які більші за перший елемент
+            помножити на 2
+        </p>
+
+        <script>
+            //дано масив елементів
+            function getArrNumber() {
+                let arr = []
+                const min = -500
+                const max = 500
+                for (let i = 0; i < 10; i++) {
+                    let random =
+                        min + Math.floor(Math.random() * (max - min + 1))
+                    arr.push(random)
+                }
+                return arr
+            }
+            let arrOne = getArrNumber()
+            //копия початкового масива для змінни
+            let arrTwo = Array.from(arrOne)
+            //збільшуемо елементи які більші за перший на 2
+            arrTwo.forEach((elem, index, arrBase) => {
+                if (elem > arrBase[0]) {
+                    arrBase[index] *= 2
+                }
+            })
+            document.write(`Початковий масив: ${arrOne.join(", ")} <br>
+            Змінений масив: ${arrTwo.join(", ")}`)
+        </script>
+    </body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>JavaScript</title>
+    </head>
+
+    <body>
+        <h1>Задача №7</h1>
+        <p>
+            Дано масив цін. Змінити цей масив так, що на ціни товарів, які
+            більші за 1000 грн. дати 30% знижки.
+        </p>
+
+        <script>
+            //дано масив елементів
+            function getArrNumber() {
+                let arr = []
+                const min = 500
+                const max = 5000
+                for (let i = 0; i < 10; i++) {
+                    let random =
+                        min + Math.floor(Math.random() * (max - min + 1))
+                    arr.push(random)
+                }
+                return arr
+            }
+            const arrPrice = getArrNumber()
+            //копия початкового масива для змінни
+            const arrDiscount = [...arrPrice]
+            //умови знижки
+            const discountPrice = 1000
+            const discount = 0.3
+            //обчислення
+            arrDiscount.forEach((elem, index, arrBase) => {
+                if (elem > discountPrice) {
+                    arrBase[index] = elem - elem * discount
+                }
+            })
+            document.write(`Почтковий масив: ${arrPrice.join(", ")} <br>
+                Масив зі снижками: ${arrDiscount.join(", ")}
+            `)
+        </script>
+    </body>
+</html>

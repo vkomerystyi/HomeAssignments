@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>JavaScript</title>
+    </head>
+
+    <body>
+        <h1>Задача №8</h1>
+        <p>
+            Дано масив номерів авто. Сформувати новий масив тих, які починаються
+            на «А»
+        </p>
+
+        <script>
+            //дано масив елементів
+            let carNumbers = [
+                "AA1111BB",
+                "BC2323CA",
+                "DD9876FF",
+                "FG78",
+                "GH8765DS",
+                "RF5421WQ",
+                "AZ7777AZ",
+                "ZX9",
+                "UI3821HQ",
+                "AX9921AA",
+                "QW4567ZX",
+                "PV7890FG",
+                "KL432",
+                "NM9865YU",
+                "LK2468TF",
+                "AT0867JA",
+            ]
+            //робимо копію нового масива
+            const carNumberA = carNumbers.map((el, index, arrBase) => {
+                if (arrBase[el][0] == "A") arrBase[el]
+            })
+            console.log(carNumberA)
+        </script>
+    </body>
+</html>
